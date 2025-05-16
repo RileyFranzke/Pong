@@ -9,11 +9,11 @@ body {
   margin: 0;
 }
 #game {
-  margin: 4px;
+  margin: 643px;
   border: 5px solid black;
   left: 0;
   position: absolute;
-  background-image: url("Pong/background.jpg");
+  background-image: url("background.jpg");
   background-size: cover;
 }
 
