@@ -13,8 +13,8 @@ body {
 #game {
   margin: 4px;
   border: 5px solid black;
-  left: 0;
-  position: absolute center;
+  center: 0;
+  position: absolute;
   background-image: URL("./background.jpg");
   background-size: cover;
 }
