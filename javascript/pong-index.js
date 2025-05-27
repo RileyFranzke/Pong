@@ -177,7 +177,7 @@ function updateBall() {
   //Right Wall
   if (newBallPos.x + ball.size.x > game.size.x - game.padding.x) {
     ball.position.x = game.size.x - game.padding.x;
-    ball.direction.x = -Math.abs(ball.direction.x + ball.acceleration);
+    ball.direction.x = -Math.pow(ball.direction.x + ball.acceleration);
     ball.direction.y += paddleRight.velocity.y * -1 * ball.inertialTransfer;
     ball.direction.y += randomAdjust(1, false);
     //check for leftscore via paddleRight position
@@ -210,7 +210,7 @@ function updateBall() {
   //Left Wall
   if (newBallPos.x < game.padding.x) {
     ball.position.x = game.padding.x;
-    ball.direction.x = Math.abs(ball.direction.x - ball.acceleration);
+    ball.direction.x = Math.pow(ball.direction.x - ball.acceleration);
     ball.direction.y += paddleLeft.velocity.y * -1 * ball.inertialTransfer;
     ball.direction.y += randomAdjust(1, false);
     //check for rightScore via paddleLeft position
