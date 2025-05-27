@@ -192,7 +192,6 @@ function updateBall() {
         scoreDisplayUpdate();
         leftScoreHit.turnOn();
         paddleLeft.hasHit = false;
-        ball.acceleration = 0;
       } else {
         ballHitWall.turnOn();
       }
@@ -228,7 +227,6 @@ function updateBall() {
         scoreDisplayUpdate();
         rightScoreHit.turnOn();
         paddleRight.hasHit = false;
-        ball.acceleration = 0;
       } else {
         ballHitWall.turnOn();
       }
