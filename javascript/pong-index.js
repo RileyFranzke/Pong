@@ -177,6 +177,7 @@ function updateBall() {
   //Right Wall
   if (newBallPos.x + ball.size.x > game.size.x - game.padding.x) {
     ball.position.x = game.size.x - game.padding.x;
+    ball.acceleration += 0.05;
     ball.direction.x = -Math.abs(ball.direction.x + ball.acceleration);
     ball.direction.y += paddleRight.velocity.y * -1 * ball.inertialTransfer;
     ball.direction.y += randomAdjust(1, false);
@@ -191,6 +192,7 @@ function updateBall() {
         scoreDisplayUpdate();
         leftScoreHit.turnOn();
         paddleLeft.hasHit = false;
+        ball.acceleration = 0;
       } else {
         ballHitWall.turnOn();
       }
@@ -204,12 +206,14 @@ function updateBall() {
   }
   //Bottom Wall
   if (newBallPos.y + ball.size.y > game.size.y - game.padding.y) {
+    ball.acceleration += 0.05;
     ball.direction.y = -Math.abs(ball.direction.y);
     ballHitWall.turnOn();
   }
   //Left Wall
   if (newBallPos.x < game.padding.x) {
     ball.position.x = game.padding.x;
+    ball.acceleration += 0.05;
     ball.direction.x = Math.abs(ball.direction.x - ball.acceleration);
     ball.direction.y += paddleLeft.velocity.y * -1 * ball.inertialTransfer;
     ball.direction.y += randomAdjust(1, false);
@@ -224,6 +228,7 @@ function updateBall() {
         scoreDisplayUpdate();
         rightScoreHit.turnOn();
         paddleRight.hasHit = false;
+        ball.acceleration = 0;
       } else {
         ballHitWall.turnOn();
       }
@@ -237,6 +242,7 @@ function updateBall() {
   }
   //Top Wall
   if (newBallPos.y < game.padding.y) {
+    ball.acceleration += 0.05;
     ball.direction.y = Math.abs(ball.direction.y);
     ballHitWall.turnOn();
   }
