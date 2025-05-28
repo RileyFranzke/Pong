@@ -45,7 +45,7 @@ var game = new Game();
 game.htmlElement = document.getElementById("game");
 var ball = new Ball();
 ball.htmlElement = document.getElementById("ball");
-ballReset();
+ballReset(ball.acceleration = 0.1);
 var paddleArray = [];
 var paddleLeft = new Paddle();
 paddleLeft.controller = "player1";
@@ -262,12 +262,12 @@ function ballReset() {
 
 //Constrain Ball Speed to Maximums
 function ballCheckMax() {
-  ball.direction.x = maxSpeed;
+  ball.direction.x = clamp(ball.direction.x, -ball.maximum.x, ball.maximum.x);
     ball.direction.x,
     -1 * ball.maximum.x,
     ball.maximum.x
   );
-  ball.direction.y = maxSpeed;
+  ball.direction.y = clamp(ball.direction.y, -ball.maximum.y, ball.maximum.y);
     ball.direction.y,
     -1 * ball.maximum.y,
     ball.maximum.y
