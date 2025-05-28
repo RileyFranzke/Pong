@@ -262,12 +262,12 @@ function ballReset() {
 
 //Constrain Ball Speed to Maximums
 function ballCheckMax() {
-  ball.direction.x = clamp(ball.direction.x, -ball.maximum.x, ball.maximum.x);
+  ball.direction.x = clamp(
     ball.direction.x,
     -1 * ball.maximum.x,
     ball.maximum.x
   );
-  ball.direction.y = clamp(ball.direction.y, -ball.maximum.y, ball.maximum.y);
+  ball.direction.y = clamp(
     ball.direction.y,
     -1 * ball.maximum.y,
     ball.maximum.y
