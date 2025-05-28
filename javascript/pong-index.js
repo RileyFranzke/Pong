@@ -179,7 +179,7 @@ function updateBall() {
     ball.position.x = game.size.x - game.padding.x;
     ball.direction += 2;
     ball.direction.x = -Math.abs(ball.direction.x + ball.velocity);
-    ball.direction.y += paddleRight.velocity.y * -2 * ball.inertialTransfer;
+    ball.direction.y += paddleRight.velocity.y * -1 * ball.inertialTransfer;
     ball.direction.y += randomAdjust(1, false);
     //check for leftscore via paddleRight position
     if (
@@ -214,7 +214,7 @@ function updateBall() {
     ball.position.x = game.padding.x;
     ball.direction += 2;
     ball.direction.x = Math.abs(ball.direction.x + ball.velocity);
-    ball.direction.y += paddleLeft.velocity.y * -2 * ball.inertialTransfer;
+    ball.direction.y += paddleLeft.velocity.y * -1 * ball.inertialTransfer;
     ball.direction.y += randomAdjust(1, false);
     //check for rightScore via paddleLeft position
     if (
