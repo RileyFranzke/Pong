@@ -45,7 +45,7 @@ var game = new Game();
 game.htmlElement = document.getElementById("game");
 var ball = new Ball();
 ball.htmlElement = document.getElementById("ball");
-ballReset(ball.acceleration = 0.1);
+ballReset();
 var paddleArray = [];
 var paddleLeft = new Paddle();
 paddleLeft.controller = "player1";
